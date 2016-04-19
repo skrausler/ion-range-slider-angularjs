@@ -71,7 +71,12 @@ angular.module("ion.rangeslider").directive("ionRangeSlider", [
                         from: value
                     });
                 }));
-                watchers.push($scope.$watch('disable', function (value) {
+                watchers.push($scope.$watch('to', function (value) {
+                    $element.data("ionRangeSlider").update({
+                        to: value
+                    });
+                }));
+				watchers.push($scope.$watch('disable', function (value) {
                     $element.data("ionRangeSlider").update({
                         disable: value
                     });
